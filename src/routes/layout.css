@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+@plugin '@tailwindcss/typography';
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-950 antialiased;
+  }
+}

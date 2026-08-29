@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      DATABASE_URL: ${{ github.workspace }}/stopsel-ci.db
+      ORIGIN: http://127.0.0.1:4173
+      BETTER_AUTH_SECRET: ci-only-secret-with-at-least-32-characters
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run db:migrate
+      - run: npm run lint
+      - run: npm run check
+      - run: npm run test:unit -- --run
+      - run: npm run build
+      - run: npm run test:e2e
