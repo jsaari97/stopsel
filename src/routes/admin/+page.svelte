@@ -30,43 +30,44 @@
   main {
     display: flex;
     min-height: 100vh;
-    max-width: 48rem;
+    max-width: var(--container-3xl);
     margin-inline: auto;
-    padding: 3rem 1.5rem;
+    padding: var(--spacing-12) var(--spacing-6);
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--spacing-6);
   }
 
   header p {
-    color: #475569;
-    font-size: 0.875rem;
-    font-weight: 500;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-sm);
   }
 
   h1 {
-    color: #020617;
-    font-size: 1.875rem;
-    font-weight: 600;
-    line-height: 1.2;
+    color: var(--color-text);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-3xl);
   }
 
   section {
-    padding: 1.5rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 0.5rem;
-    background: #ffffff;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 5%);
+    padding: var(--spacing-6);
+    border: var(--border-width-1) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-xs);
   }
 
   h2 {
-    color: #020617;
-    font-size: 1.125rem;
-    font-weight: 600;
-    line-height: 1.75rem;
+    color: var(--color-text);
+    font-size: var(--text-lg);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-lg);
   }
 
   section p {
-    margin-top: 0.5rem;
-    color: #334155;
+    margin-top: var(--spacing-2);
+    color: var(--color-text-secondary);
   }
 </style>

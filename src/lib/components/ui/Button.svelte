@@ -16,26 +16,26 @@
   }
 
   .root :global([data-button-root]) {
-    min-height: 2.75rem;
-    padding: 0.625rem 1.25rem;
+    min-height: var(--spacing-11);
+    padding: var(--spacing-2-5) var(--spacing-5);
     border: 0;
-    border-radius: 0.375rem;
-    background: #0f172a;
-    color: #ffffff;
-    font-weight: 500;
+    border-radius: var(--radius-md);
+    background: var(--color-action);
+    color: var(--color-on-action);
+    font-weight: var(--font-weight-medium);
   }
 
   .root :global([data-button-root]:hover) {
-    background: #334155;
+    background: var(--color-action-hover);
   }
 
   .root :global([data-button-root]:focus-visible) {
-    outline: 2px solid #0f172a;
-    outline-offset: 2px;
+    outline: var(--border-width-2) solid var(--color-focus);
+    outline-offset: var(--border-width-2);
   }
 
   .root :global([data-button-root]:disabled) {
     cursor: not-allowed;
-    opacity: 0.5;
+    opacity: var(--opacity-disabled);
   }
 </style>

@@ -19,44 +19,46 @@
   main {
     display: flex;
     min-height: 100vh;
-    max-width: 42rem;
+    max-width: var(--container-2xl);
     margin-inline: auto;
-    padding: 3rem 1.5rem;
+    padding: var(--spacing-12) var(--spacing-6);
     flex-direction: column;
     justify-content: center;
   }
 
   .eyebrow {
-    color: #475569;
-    font-size: 0.875rem;
-    font-weight: 500;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-sm);
   }
 
   h1 {
-    margin-top: 0.5rem;
-    color: #020617;
-    font-size: 2.25rem;
-    font-weight: 600;
-    letter-spacing: -0.025em;
-    line-height: 1.1;
+    margin-top: var(--spacing-2);
+    color: var(--color-text);
+    font-size: var(--text-4xl);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-tight);
+    line-height: var(--leading-4xl);
   }
 
   .introduction {
-    max-width: 65ch;
-    margin-top: 1.5rem;
-    color: #334155;
-    font-size: 1.125rem;
-    line-height: 2rem;
+    max-width: var(--container-prose);
+    margin-top: var(--spacing-6);
+    color: var(--color-text-secondary);
+    font-size: var(--text-lg);
+    line-height: var(--leading-2xl);
   }
 
   .status {
-    margin-top: 1rem;
-    color: #475569;
+    margin-top: var(--spacing-4);
+    color: var(--color-text-muted);
   }
 
   @media (min-width: 40rem) {
     h1 {
-      font-size: 3rem;
+      font-size: var(--text-5xl);
+      line-height: var(--leading-5xl);
     }
   }
 </style>

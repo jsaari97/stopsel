@@ -37,61 +37,62 @@
   main {
     display: flex;
     min-height: 100vh;
-    max-width: 28rem;
+    max-width: var(--container-md);
     margin-inline: auto;
-    padding: 3rem 1.5rem;
+    padding: var(--spacing-12) var(--spacing-6);
     flex-direction: column;
     justify-content: center;
   }
 
   .eyebrow {
-    color: #475569;
-    font-size: 0.875rem;
-    font-weight: 500;
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-sm);
   }
 
   h1 {
-    margin-top: 0.25rem;
-    color: #020617;
-    font-size: 1.875rem;
-    font-weight: 600;
-    line-height: 1.2;
+    margin-top: var(--spacing-1);
+    color: var(--color-text);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--leading-3xl);
   }
 
   form {
     display: flex;
-    margin-top: 2rem;
+    margin-top: var(--spacing-8);
     flex-direction: column;
-    gap: 1.25rem;
+    gap: var(--spacing-5);
   }
 
   label {
     display: flex;
-    color: #1e293b;
-    font-weight: 500;
+    color: var(--color-text-label);
+    font-weight: var(--font-weight-medium);
     flex-direction: column;
-    gap: 0.5rem;
+    gap: var(--spacing-2);
   }
 
   input {
-    min-height: 2.75rem;
-    padding: 0.5rem 0.75rem;
-    border: 1px solid #94a3b8;
-    border-radius: 0.375rem;
-    background: #ffffff;
-    color: #020617;
+    min-height: var(--spacing-11);
+    padding: var(--spacing-2) var(--spacing-3);
+    border: var(--border-width-1) solid var(--color-border-control);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    color: var(--color-text);
   }
 
   input:focus {
-    border-color: #0f172a;
-    outline: 2px solid #0f172a;
+    border-color: var(--color-focus);
+    outline: var(--border-width-2) solid var(--color-focus);
     outline-offset: 0;
   }
 
   [role='alert'] {
-    padding: 0.75rem;
-    border-radius: 0.375rem;
-    background: #fef2f2;
-    color: #991b1b;
+    padding: var(--spacing-3);
+    border-radius: var(--radius-md);
+    background: var(--color-danger-surface);
+    color: var(--color-danger-text);
   }
 </style>
