@@ -2,7 +2,7 @@
 
 - **Language**: TypeScript
 - **Package Manager**: npm
-- **Add-ons**: prettier, eslint, vitest, playwright, tailwindcss, sveltekit-adapter, drizzle, better-auth, ai-tools
+- **Add-ons**: prettier, eslint, vitest, playwright, sveltekit-adapter, drizzle, better-auth, ai-tools
 - **UI Library**: bits-ui
 
 ---
