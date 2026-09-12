@@ -1,6 +1,8 @@
 import { relations } from 'drizzle-orm';
 import { index, integer, sqliteTable, text, uniqueIndex } from 'drizzle-orm/sqlite-core';
 
+// These regions preserve the fine source classification. The public selector
+// combines them into broader regions in $lib/server/dialects.ts.
 export const dialectRegion = sqliteTable(
   'dialect_region',
   {
