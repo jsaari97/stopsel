@@ -28,7 +28,10 @@
 
   <label class="search-label" for="area-search">Sök efter en ort</label>
   <div class="search-field">
-    <span aria-hidden="true">⌕</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="11" cy="11" r="7" />
+      <path d="m16 16 5 5" />
+    </svg>
     <input id="area-search" type="search" placeholder="Sök ort …" bind:value={query} />
   </div>
 
@@ -63,13 +66,15 @@
       <p class="error" role="alert">{form.message}</p>
     {/if}
 
-    <Button type="submit" fullWidth disabled={!selectedAreaId}>Fortsätt</Button>
+    {#if selectedAreaId}
+      <Button type="submit" fullWidth>Fortsätt</Button>
+    {/if}
   </form>
 </PublicPage>
 
 <style>
   header {
-    margin: var(--spacing-6) 0 var(--spacing-4);
+    margin: var(--spacing-5) 0 var(--spacing-4);
   }
 
   h1 {
@@ -101,11 +106,11 @@
     align-items: center;
     min-height: var(--spacing-11);
     margin-bottom: var(--spacing-3);
-    padding: 0 var(--spacing-3);
+    padding: 0 var(--spacing-5);
     border: var(--border-width-1) solid transparent;
     border-radius: var(--radius-xl);
-    background: rgb(96 67 41 / 7%);
-    gap: var(--spacing-2);
+    background: var(--color-brand-note);
+    gap: var(--spacing-3);
   }
 
   .search-field:focus-within {
@@ -122,6 +127,16 @@
     background: transparent;
   }
 
+  .search-field svg {
+    width: var(--spacing-5);
+    height: var(--spacing-5);
+    flex: none;
+    fill: none;
+    stroke: var(--color-brand-ink);
+    stroke-linecap: round;
+    stroke-width: 1.4;
+  }
+
   fieldset {
     margin: 0;
     padding: 0;
@@ -129,19 +144,19 @@
   }
 
   .area-list {
-    max-height: min(46svh, 26rem);
+    max-height: 26rem;
     overflow-y: auto;
     border: var(--border-width-1) solid var(--color-brand-border);
     border-radius: var(--radius-xl);
-    background: rgb(255 255 255 / 34%);
+    background: var(--color-brand-surface);
   }
 
   .area-list label {
     display: grid;
     position: relative;
     align-items: center;
-    min-height: 3.25rem;
-    padding: var(--spacing-3) var(--spacing-4);
+    min-height: var(--spacing-12);
+    padding: var(--spacing-4);
     cursor: pointer;
     grid-template-columns: 1fr auto;
     gap: var(--spacing-3);
@@ -169,14 +184,19 @@
   }
 
   .marker {
-    width: var(--spacing-4);
-    height: var(--spacing-4);
-    border: var(--border-width-1) solid var(--color-brand-action);
-    border-radius: var(--radius-full);
+    width: var(--spacing-5);
+    height: auto;
+    border: 0;
+    font-size: var(--text-2xl);
+    line-height: 1;
+  }
+
+  .marker::before {
+    content: '›';
   }
 
   label.selected .marker {
-    border: var(--border-width-4) solid var(--color-brand-action);
+    color: var(--color-brand-action);
   }
 
   .empty {
@@ -186,8 +206,12 @@
   }
 
   .help {
-    margin: var(--spacing-5) 0;
+    margin: var(--spacing-4) 0 var(--spacing-5);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-lg);
+    background: var(--color-brand-note);
     color: var(--color-brand-text-secondary);
+    font-size: var(--text-sm);
     text-align: center;
   }
 

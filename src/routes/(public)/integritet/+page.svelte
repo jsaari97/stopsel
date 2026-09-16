@@ -18,42 +18,24 @@
       <p class="lead">Den här sidan är inte den slutliga integritetsinformationen.</p>
     </header>
 
-    <div class="notice" role="note">
-      Stöpsel får inte öppnas för bidrag innan ansvarig organisation, kontaktväg, rättslig grund och
-      lagringstider finns på den här sidan.
-    </div>
-
     <section>
       <h2>Utan konto, men inte anonymt</h2>
       <p>
-        Du ska kunna bidra utan ett konto. En privat kod i din webbläsare ska koppla ihop dina
-        bidrag och granskningar. Uppgifterna är därför pseudonyma. De är inte anonyma.
+        Du kan bidra utan konto. En privat kod kopplar ihop dina bidrag. Uppgifterna är pseudonyma,
+        inte anonyma.
       </p>
     </section>
 
     <section>
       <h2>Planerade uppgifter</h2>
       <p>
-        Tjänsten ska lagra ditt dialektområde, din svarstext, tidpunkten för bidraget och uppgifter
-        som behövs för granskning och moderering.
+        Tjänsten lagrar dialektområde, svarstext, tid och uppgifter för granskning och moderering.
       </p>
     </section>
 
     <section>
       <h2>Dina bidrag</h2>
-      <p>
-        Du ska kunna se och ta bort bidrag som hör till din privata kod. En återställningskod ska
-        kunna ge åtkomst från en annan webbläsare. Den koden måste behandlas som en hemlighet.
-      </p>
-    </section>
-
-    <section>
-      <h2>Framtida publicering</h2>
-      <p>
-        En framtida offentlig korpus får inte innehålla gästidentifierare, e-postadresser, råa
-        IP-adresser eller modereringshistorik. En sådan publicering kräver egna villkor och en
-        dokumenterad integritetskontroll.
-      </p>
+      <p>Du kan se och ta bort bidrag som hör till din privata kod.</p>
     </section>
   </article>
 </PublicPage>
@@ -61,7 +43,7 @@
 <style>
   article {
     max-width: var(--container-prose);
-    margin: var(--spacing-6) auto 0;
+    margin: var(--spacing-4) auto 0;
   }
 
   header {
@@ -86,14 +68,6 @@
     margin-top: var(--spacing-3);
     color: var(--color-brand-text-secondary);
     font-size: var(--text-lg);
-  }
-
-  .notice {
-    margin-bottom: var(--spacing-8);
-    padding: var(--spacing-4);
-    border: var(--border-width-1) solid var(--color-brand-border);
-    border-radius: var(--radius-xl);
-    background: var(--color-brand-note);
   }
 
   section + section {

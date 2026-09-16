@@ -18,41 +18,19 @@
       <p class="lead">De slutliga villkoren och textlicensen är ännu inte fastställda.</p>
     </header>
 
-    <div class="notice" role="note">
-      Stöpsel får inte ta emot bidrag innan den slutliga textlicensen, kontaktvägen och processen
-      för återkallelse finns på den här sidan.
-    </div>
-
     <section>
       <h2>Ditt eget svar</h2>
-      <p>
-        Du ska endast skicka text som du själv har skrivit. Texten ska inte avsiktligt innehålla en
-        annan persons privata information.
-      </p>
+      <p>Skicka bara text som du själv har skrivit. Ta inte med privat information om andra.</p>
     </section>
 
     <section>
       <h2>Språklig variation</h2>
-      <p>
-        Olika ord, stavningar och meningsbyggnader är värdefulla. Ett bidrag behöver inte följa en
-        formell stavningsregel.
-      </p>
+      <p>Olika ord, stavningar och meningsbyggnader är värdefulla.</p>
     </section>
 
     <section>
       <h2>Granskning och moderering</h2>
-      <p>
-        Andra användare ska kunna bedöma om ett svar låter naturligt för dialekten. Stöpsel ska
-        kunna dölja eller ta bort spam, personuppgifter och olämpligt innehåll.
-      </p>
-    </section>
-
-    <section>
-      <h2>Användning av bidrag</h2>
-      <p>
-        Bidrag ska kunna användas för forskning, ordböcker, öppna data och språkteknik. De slutliga
-        villkoren måste beskriva den exakta tillåtelsen innan insamlingen börjar.
-      </p>
+      <p>Andra kan bedöma om ett svar låter naturligt. Spam och olämpligt innehåll kan tas bort.</p>
     </section>
   </article>
 </PublicPage>
@@ -60,7 +38,7 @@
 <style>
   article {
     max-width: var(--container-prose);
-    margin: var(--spacing-6) auto 0;
+    margin: var(--spacing-4) auto 0;
   }
 
   header {
@@ -85,14 +63,6 @@
     margin-top: var(--spacing-3);
     color: var(--color-brand-text-secondary);
     font-size: var(--text-lg);
-  }
-
-  .notice {
-    margin-bottom: var(--spacing-8);
-    padding: var(--spacing-4);
-    border: var(--border-width-1) solid var(--color-brand-border);
-    border-radius: var(--radius-xl);
-    background: var(--color-brand-note);
   }
 
   section + section {

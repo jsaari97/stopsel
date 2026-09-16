@@ -14,7 +14,7 @@
     max-width: var(--container-lg);
     min-height: 100svh;
     margin-inline: auto;
-    padding: var(--spacing-5) var(--spacing-5) var(--spacing-10);
+    padding: var(--spacing-10) var(--spacing-5);
   }
 
   main.narrow {

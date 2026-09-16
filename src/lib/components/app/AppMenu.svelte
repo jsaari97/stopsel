@@ -1,16 +1,17 @@
 <script lang="ts">
+  import { resolve } from '$app/paths';
   import { Dialog } from 'bits-ui';
 </script>
 
 <Dialog.Root>
-  <Dialog.Trigger class="trigger">Så fungerar det <span aria-hidden="true">→</span></Dialog.Trigger>
+  <Dialog.Trigger class="app-menu-trigger" aria-label="Öppna meny">Stöpsel</Dialog.Trigger>
   <Dialog.Portal>
-    <Dialog.Overlay class="overlay" />
-    <Dialog.Content class="content">
-      <Dialog.Close class="close">Stäng</Dialog.Close>
-      <Dialog.Title class="title">Så fungerar Stöpsel</Dialog.Title>
-      <Dialog.Description class="description">
-        Du hjälper oss att samla exempel på finlandssvenska dialekter.
+    <Dialog.Overlay class="app-menu-overlay" />
+    <Dialog.Content class="app-menu-content">
+      <Dialog.Close class="app-menu-close">Stäng</Dialog.Close>
+      <Dialog.Title class="app-menu-title">Så fungerar Stöpsel</Dialog.Title>
+      <Dialog.Description class="app-menu-description">
+        Tre steg för att bidra med din dialekt.
       </Dialog.Description>
 
       <ol>
@@ -19,56 +20,56 @@
         <li><span>3</span>Skriv hur du själv skulle säga den.</li>
       </ol>
 
-      <div class="note">
-        <p>Skriv som det låter för dig.</p>
-        <p>Stavningen behöver inte vara perfekt.</p>
-      </div>
+      <nav aria-label="Information">
+        <a href={resolve('/(public)/integritet')}>Integritet</a>
+        <a href={resolve('/(public)/villkor')}>Villkor för bidrag</a>
+      </nav>
     </Dialog.Content>
   </Dialog.Portal>
 </Dialog.Root>
 
 <style>
-  :global(.trigger) {
+  :global(.app-menu-trigger) {
     display: inline-flex;
-    align-items: center;
-    min-height: var(--spacing-11);
-    padding: var(--spacing-2) var(--spacing-3);
+    width: auto;
+    height: var(--spacing-11);
+    padding: 0 var(--spacing-1);
     border: 0;
     border-radius: var(--radius-md);
     background: transparent;
-    color: var(--color-brand-action);
+    color: var(--color-brand-ink);
     cursor: pointer;
-    font: inherit;
-    font-size: var(--text-sm);
-    font-weight: var(--font-weight-semibold);
-    gap: var(--spacing-1);
+    align-items: center;
+    font-size: var(--text-xl);
+    font-weight: var(--font-weight-bold);
   }
 
-  :global(.trigger:hover) {
-    background: color-mix(in srgb, var(--color-brand-action) 8%, transparent);
+  :global(.app-menu-trigger:hover) {
+    background: color-mix(in srgb, var(--color-brand-action) 16%, transparent);
   }
 
-  :global(.trigger:focus-visible),
-  :global(.close:focus-visible) {
+  :global(.app-menu-trigger:focus-visible),
+  :global(.app-menu-close:focus-visible),
+  :global(.app-menu-content a:focus-visible) {
     outline: var(--border-width-2) solid var(--color-brand-ink);
     outline-offset: var(--border-width-2);
   }
 
-  :global(.overlay) {
+  :global(.app-menu-overlay) {
     position: fixed;
     z-index: 40;
     background: rgb(11 32 26 / 45%);
     inset: 0;
   }
 
-  :global(.content) {
+  :global(.app-menu-content) {
     position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 50;
     max-height: calc(100svh - var(--spacing-8));
-    padding: var(--spacing-12) var(--spacing-6) var(--spacing-10);
+    padding: var(--spacing-16) var(--spacing-6) var(--spacing-10);
     overflow-y: auto;
     border-radius: var(--radius-3xl) var(--radius-3xl) 0 0;
     background: var(--color-brand-page);
@@ -76,7 +77,7 @@
     box-shadow: var(--shadow-xl);
   }
 
-  :global(.close) {
+  :global(.app-menu-close) {
     position: absolute;
     top: var(--spacing-4);
     right: var(--spacing-5);
@@ -90,28 +91,21 @@
     font: inherit;
   }
 
-  :global(.title) {
+  :global(.app-menu-title) {
     display: block;
-    margin: 0;
     font-size: var(--text-2xl);
     font-weight: var(--font-weight-bold);
     line-height: var(--leading-2xl);
   }
 
-  :global(.description) {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  :global(.app-menu-description) {
+    margin-top: var(--spacing-2);
+    color: var(--color-brand-text-secondary);
   }
 
   ol {
     display: grid;
-    margin: var(--spacing-6) 0;
+    margin: var(--spacing-8) 0;
     padding: 0;
     gap: var(--spacing-4);
     list-style: none;
@@ -135,18 +129,23 @@
     place-items: center;
   }
 
-  .note {
+  nav {
+    display: flex;
     padding-top: var(--spacing-5);
     border-top: var(--border-width-1) solid var(--color-brand-border);
-    text-align: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-3) var(--spacing-5);
   }
 
-  .note p {
-    color: var(--color-brand-text-secondary);
+  nav a {
+    min-height: var(--spacing-11);
+    padding: var(--spacing-2) 0;
+    color: var(--color-brand-action);
+    font-weight: var(--font-weight-medium);
   }
 
   @media (min-width: 40rem) {
-    :global(.content) {
+    :global(.app-menu-content) {
       top: 50%;
       right: auto;
       bottom: auto;

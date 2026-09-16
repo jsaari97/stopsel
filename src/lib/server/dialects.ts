@@ -107,3 +107,32 @@ export async function getPublicDialectRegion(code: string) {
 
   return { code: region.code, name: region.name, areas };
 }
+
+export async function getSelectedDialectArea(id: number) {
+  const [selectedArea] = await db
+    .select({
+      id: dialectArea.id,
+      name: dialectArea.name,
+      sourceRegionCode: dialectRegion.code
+    })
+    .from(dialectArea)
+    .innerJoin(dialectRegion, eq(dialectArea.dialectRegionId, dialectRegion.id))
+    .where(
+      and(eq(dialectArea.id, id), eq(dialectArea.isActive, true), eq(dialectRegion.isActive, true))
+    )
+    .limit(1);
+
+  if (!selectedArea) return null;
+
+  const publicRegion = publicDialectRegions.find((region) =>
+    region.sourceRegionCodes.some((code) => code === selectedArea.sourceRegionCode)
+  );
+
+  if (!publicRegion) return null;
+
+  return {
+    id: selectedArea.id,
+    name: selectedArea.name,
+    region: { code: publicRegion.code, name: publicRegion.name }
+  };
+}

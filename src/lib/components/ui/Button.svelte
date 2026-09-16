@@ -35,14 +35,14 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: var(--spacing-11);
-    padding: var(--spacing-2-5) var(--spacing-5);
+    min-height: var(--spacing-12);
+    padding: var(--spacing-3) var(--spacing-5);
     border: 0;
     border-radius: var(--radius-md);
-    background: var(--color-action);
+    background: var(--color-brand-action);
     color: var(--color-on-action);
     cursor: pointer;
-    font-weight: var(--font-weight-medium);
+    font-weight: var(--font-weight-semibold);
     text-align: center;
     text-decoration: none;
     transition:
@@ -55,29 +55,29 @@
   }
 
   .root :global([data-button-root][data-variant='secondary']) {
-    background: var(--color-surface);
-    color: var(--color-text);
-    box-shadow: inset 0 0 0 var(--border-width-1) var(--color-border);
+    background: var(--color-brand-surface);
+    color: var(--color-brand-ink);
+    box-shadow: none;
   }
 
   .root :global([data-button-root][data-variant='quiet']) {
     min-height: auto;
     padding: var(--spacing-2);
     background: transparent;
-    color: var(--color-text-secondary);
+    color: var(--color-brand-text-secondary);
   }
 
   .root :global([data-button-root]:hover) {
-    background: var(--color-action-hover);
+    background: var(--color-brand-action-hover);
   }
 
   .root :global([data-button-root][data-variant='secondary']:hover),
   .root :global([data-button-root][data-variant='quiet']:hover) {
-    background: color-mix(in srgb, var(--color-action) 8%, transparent);
+    background: color-mix(in srgb, var(--color-brand-action) 10%, var(--color-brand-surface));
   }
 
   .root :global([data-button-root]:focus-visible) {
-    outline: var(--border-width-2) solid var(--color-focus);
+    outline: var(--border-width-2) solid var(--color-brand-ink);
     outline-offset: var(--border-width-2);
   }
 

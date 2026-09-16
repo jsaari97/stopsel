@@ -27,14 +27,16 @@
     margin-inline-start: calc(-1 * var(--spacing-3));
     padding: var(--spacing-2) var(--spacing-3);
     border-radius: var(--radius-md);
-    color: var(--color-text-secondary);
+    color: var(--color-brand-ink);
+    font-size: var(--text-sm);
+    font-weight: var(--font-weight-semibold);
     gap: var(--spacing-1);
     text-decoration: none;
   }
 
   a:hover {
-    background: color-mix(in srgb, var(--color-action) 8%, transparent);
-    color: var(--color-text);
+    background: color-mix(in srgb, var(--color-brand-action) 8%, transparent);
+    color: var(--color-brand-ink);
   }
 
   a:focus-visible {

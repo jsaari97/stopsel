@@ -17,7 +17,7 @@
 
   <header>
     <h1>Varifrån kommer<br />din dialekt?</h1>
-    <p>Välj det område som passar bäst. Du kan välja ort efteråt.</p>
+    <p>Välj det område som passar bäst.<br />Du kan välja ort efteråt.</p>
   </header>
 
   <nav class="region-list" aria-label="Dialektområden">
@@ -58,14 +58,14 @@
     overflow: hidden;
     border: var(--border-width-1) solid var(--color-brand-border);
     border-radius: var(--radius-xl);
-    background: rgb(255 255 255 / 34%);
+    background: var(--color-brand-surface);
   }
 
   .region-list a {
     display: flex;
     align-items: center;
-    min-height: 3.25rem;
-    padding: var(--spacing-3) var(--spacing-4);
+    min-height: var(--spacing-12);
+    padding: var(--spacing-3);
     color: var(--color-brand-ink);
     justify-content: space-between;
     text-decoration: none;
@@ -91,8 +91,12 @@
   }
 
   .help {
-    margin-top: var(--spacing-8);
+    margin-top: var(--spacing-4);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-lg);
+    background: var(--color-brand-note);
     color: var(--color-brand-text-secondary);
+    font-size: var(--text-sm);
     text-align: center;
   }
 

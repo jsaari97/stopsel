@@ -20,6 +20,23 @@ test('links the landing page to the public dialect flow', async ({ page }) => {
   await expect(page.getByRole('button', { name: /Så fungerar det/ })).toBeVisible();
 });
 
+test('returns a visitor with a selected dialect to the daily phrase', async ({ context, page }) => {
+  await context.addCookies([
+    {
+      name: 'stopsel_dialect_area',
+      value: '1',
+      url: 'http://127.0.0.1:4173'
+    }
+  ]);
+
+  await page.goto('/');
+
+  await expect(page).toHaveURL('/dagens-mening');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText(
+    'Hur säger du det här på din dialekt?'
+  );
+});
+
 test('lists dialect regions and filters places', async ({ page }) => {
   await page.goto('/valj-dialekt');
 

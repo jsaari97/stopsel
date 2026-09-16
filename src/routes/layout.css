@@ -82,13 +82,14 @@
   --color-danger-text: var(--color-red-800);
 
   /* Stöpsel public palette */
-  --color-brand-page: #f8f4ec;
-  --color-brand-ink: #0b2b23;
-  --color-brand-text-secondary: #30423d;
-  --color-brand-action: #7b451f;
-  --color-brand-action-hover: #673718;
-  --color-brand-note: #efe3d2;
-  --color-brand-border: #ddd3c5;
+  --color-brand-page: #f6f5f0;
+  --color-brand-ink: #142126;
+  --color-brand-text-secondary: #3a4548;
+  --color-brand-action: #416b67;
+  --color-brand-action-hover: #345a57;
+  --color-brand-note: #d7e7e1;
+  --color-brand-surface: #edf0ec;
+  --color-brand-border: #d5ddd8;
 
   /* Font families and weights */
   --font-sans:

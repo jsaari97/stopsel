@@ -15,6 +15,20 @@
       "when": 1788877144622,
       "tag": "0001_worthless_hairball",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789237609504,
+      "tag": "0002_romantic_titania",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1789497566029,
+      "tag": "0003_optimal_bloodscream",
+      "breakpoints": true
     }
   ]
 }
